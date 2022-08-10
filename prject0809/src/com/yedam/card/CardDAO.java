@@ -16,9 +16,6 @@ public class CardDAO extends DAO{
 		return dd;
 	}
 	
-	
-	
-	
 	public int registCard(Card card) {
 		int result = 0;
 		try {

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import com.yedam.carmember.CarmemberService;
+import com.yedam.clean.Clean;
 
 public class CardService {
 
@@ -62,7 +63,8 @@ public class CardService {
 	}
 	public void getCardList() {
 		List<Card> list = 
-				CardDAO.getInstance().getCardList(CarmemberService.carmemberInfo.getCarmemberId());
+				CardDAO.getInstance().getCardList
+				(CarmemberService.carmemberInfo.getCarmemberId());
 		System.out.println(CarmemberService.carmemberInfo.getCarmemberName() + "님의 카드 정보");
 		for(Card card : list) {
 			System.out.println("카드 ID> " + card.getCardId());
@@ -70,15 +72,10 @@ public class CardService {
 			System.out.println("카드 잔고> " + card.getBalance());
 		}
 	}
+	
 	public void cleanOutMoney() {
 		Card ca = new Card();
-		System.out.println("▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼");
-		System.out.println("1. ● 고압 세차 ● 5000원");
-		System.out.println("2. ● 일반 세차 ● 3000원");
-		System.out.println("3. ● 버블 세차 ● 7000원");
-		System.out.println("4. ● 프리미엄 세차 ● 15000원");
-		System.out.println("5. ● 공기압 세차 ● 10000원");
-		System.out.println("▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲");
+
 		System.out.println("원하는 번호를 선택하세요>");
 		int num = Integer.parseInt(sc.nextLine());
 		if(num == 1) {
@@ -87,31 +84,52 @@ public class CardService {
 			int money1 = 5000;
 			ca.setCardId(id1);
 			ca.setBalance(money1);
+			System.out.println("===========영수증============");
+			System.out.println("구입목록 : 고압세차");
+			System.out.println("가격 : " + money1);
+			System.out.println("===========================");
 		}else if (num == 2) {
 			System.out.println("카드 ID>");
 			String id2 = sc.nextLine();
 			int money2 = 3000;
 			ca.setCardId(id2);
 			ca.setBalance(money2);
+			System.out.println("===========영수증============");
+			System.out.println("구입목록 : 일반 세차");
+			System.out.println("가격 : " + money2);
+			System.out.println("===========================");
 		}else if (num == 3) {
 			System.out.println("카드 ID>");
 			String id3 = sc.nextLine();
 			int money3 = 7000;
 			ca.setCardId(id3);
 			ca.setBalance(money3);
+			System.out.println("===========영수증============");
+			System.out.println("구입목록 : 버블 세차");
+			System.out.println("가격 : " + money3);
+			System.out.println("===========================");
 		}else if (num == 4) {
 			System.out.println("카드 ID>");
 			String id4 = sc.nextLine();
 			int money4 = 15000;
 			ca.setCardId(id4);
 			ca.setBalance(money4);
+			System.out.println("===========영수증============");
+			System.out.println("구입목록 : 프리미엄 세차");
+			System.out.println("가격 : " + money4);
+			System.out.println("===========================");
 		}else if (num == 5) {
 			System.out.println("카드 ID>");
 			String id5 = sc.nextLine();
 			int money5 = 10000;
 			ca.setCardId(id5);
 			ca.setBalance(money5);
+			System.out.println("===========영수증============");
+			System.out.println("구입목록 : 공기압 세차");
+			System.out.println("가격 : " + money5);
+			System.out.println("===========================");
 		}
+		
 		int result = CardDAO.getInstance().outMoney(ca);
 		if(result == 1) {
 			System.out.println("$정상 출금 완료$");
@@ -121,15 +139,6 @@ public class CardService {
 	}
 	public void equipmentOutMoney() {
 		Card ca = new Card();
-		System.out.println("▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼");
-		System.out.println("1. ● 타월, 수건 ● 5000원");
-		System.out.println("2. ● 브러쉬● 10000원");
-		System.out.println("3. ● 타이어 세정제 ● 8000원");
-		System.out.println("4. ● 유리 세정제 ● 6000원");
-		System.out.println("5. ● 내부 세정제 ● 7000원");
-		System.out.println("6. ● 외부 세정제 ● 7000원");
-		System.out.println("7. ● 코팅제 ● 28000원");
-		System.out.println("▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲");
 		System.out.println("원하는 번호를 선택하세요>");
 		int num = Integer.parseInt(sc.nextLine());
 		if(num == 1) {
@@ -138,42 +147,70 @@ public class CardService {
 			int money1 = 5000;
 			ca.setCardId(id1);
 			ca.setBalance(money1);
+			System.out.println("===========영수증============");
+			System.out.println("구입목록 : 타월, 수건");
+			System.out.println("가격 : " + money1);
+			System.out.println("===========================");
 		}else if (num == 2) {
 			System.out.println("카드 ID>");
 			String id2 = sc.nextLine();
 			int money2 = 10000;
 			ca.setCardId(id2);
 			ca.setBalance(money2);
+			System.out.println("===========영수증============");
+			System.out.println("구입목록 : 브러쉬");
+			System.out.println("가격 : " + money2);
+			System.out.println("===========================");
 		}else if (num == 3) {
 			System.out.println("카드 ID>");
 			String id3 = sc.nextLine();
 			int money3 = 8000;
 			ca.setCardId(id3);
 			ca.setBalance(money3);
+			System.out.println("===========영수증============");
+			System.out.println("구입목록 : 타이어 세정제");
+			System.out.println("가격 : " + money3);
+			System.out.println("===========================");
 		}else if (num == 4) {
 			System.out.println("카드 ID>");
 			String id4 = sc.nextLine();
 			int money4 = 6000;
 			ca.setCardId(id4);
 			ca.setBalance(money4);
+			System.out.println("===========영수증============");
+			System.out.println("구입목록 : 유리 세정제");
+			System.out.println("가격 : " + money4);
+			System.out.println("===========================");
 		}else if (num == 5) {
 			System.out.println("카드 ID>");
 			String id5 = sc.nextLine();
 			int money5 = 7000;
 			ca.setCardId(id5);
 			ca.setBalance(money5);
+			System.out.println("===========영수증============");
+			System.out.println("구입목록 : 내부 세정제");
+			System.out.println("가격 : " + money5);
+			System.out.println("===========================");
 		}else if (num == 6) {
 			System.out.println("카드 ID>");
 			String id6 = sc.nextLine();
 			int money6 = 7000;
 			ca.setCardId(id6);
 			ca.setBalance(money6);
+			System.out.println("===========영수증============");
+			System.out.println("구입목록 : 외부 세정제");
+			System.out.println("가격 : " + money6);
+			System.out.println("===========================");
 		}else if (num == 7) {
 			System.out.println("카드 ID>");
 			String id7 = sc.nextLine();
 			int money7 = 28000;
 			ca.setCardId(id7);
 			ca.setBalance(money7);
+			System.out.println("===========영수증============");
+			System.out.println("구입목록 : 코팅제");
+			System.out.println("가격 : " + money7);
+			System.out.println("===========================");
 		}
 		int result = CardDAO.getInstance().outMoney(ca);
 		if(result == 1) {
