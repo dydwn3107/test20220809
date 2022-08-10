@@ -26,6 +26,7 @@ public class CarmemberService {
 	public void logout() {
 		if(carmemberInfo != null) {
 			carmemberInfo = null;
+			System.out.println("로그아웃 되었습니다.");
 		}
 	}
 	public void registerCustomer() {
@@ -65,7 +66,7 @@ public class CarmemberService {
 	public void getDetailCarmember() {
 		List<Carmember> list = CarmemberDAO.getInstance().getDetailCarmember();
 		for(Carmember carmember : list) {
-			System.out.println("**********************");
+			System.out.println("▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦");
 			System.out.println("고객 ID> " + carmember.getCarmemberId());
 			System.out.println("고객 PW> " + carmember.getCarmemberPw());
 			System.out.println("고객 이름> " + carmember.getCarmemberName());
@@ -73,7 +74,7 @@ public class CarmemberService {
 			System.out.println("고객 차량종류> " + carmember.getCarmemberCarname());
 			System.out.println("고객 이메일> " + carmember.getCarmemberEmail());
 			System.out.println("고객 주소> " + carmember.getCarmemberAddress());
-			System.out.println("**********************");
+			System.out.println("▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦");
 		}
 	}
 	public void getCarmember() {
@@ -82,7 +83,7 @@ public class CarmemberService {
 		List<Carmember> list = CarmemberDAO.getInstance().getCarmember(id);
 		
 		for(Carmember carmember : list) {
-			System.out.println("**********************");
+			System.out.println("▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦");
 			System.out.println("고객 ID> " + carmember.getCarmemberId());
 			System.out.println("고객 PW> " + carmember.getCarmemberPw());
 			System.out.println("고객 이름> " + carmember.getCarmemberName());
@@ -90,7 +91,7 @@ public class CarmemberService {
 			System.out.println("고객 차량종류> " + carmember.getCarmemberCarname());
 			System.out.println("고객 이메일> " + carmember.getCarmemberEmail());
 			System.out.println("고객 주소> " + carmember.getCarmemberAddress());
-			System.out.println("**********************");
+			System.out.println("▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦");
 		}
 	}
 	public void updateCarnum() {

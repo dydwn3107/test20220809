@@ -16,6 +16,9 @@ public class CardDAO extends DAO{
 		return dd;
 	}
 	
+	
+	
+	
 	public int registCard(Card card) {
 		int result = 0;
 		try {
@@ -88,4 +91,38 @@ public class CardDAO extends DAO{
 		}
 		return list;
 	}
+	public int outMoney(Card card) {
+		int result = 0;
+		try {
+			conn();
+			String sql = "select balance from card where card_id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, card.getCardId());
+			rs = pstmt.executeQuery();
+			
+			int balance = 0;
+			if(rs.next()) {
+				balance = rs.getInt("balance");
+			}
+			if(balance - card.getBalance() >= 0) {
+				card.setBalance(balance - card.getBalance());
+				
+				String sql2 = "update card set balance = ? where card_id = ?";
+				pstmt = conn.prepareStatement(sql2);
+				pstmt.setInt(1, card.getBalance());
+				pstmt.setString(2, card.getCardId());
+				result = pstmt.executeUpdate();
+			}else {
+				System.out.println("※잔액이 부족합니다※");
+			}
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			disconnect();
+		}
+		return result;
+	}
+
+	
 }
