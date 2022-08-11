@@ -5,6 +5,8 @@ import lombok.Data;
 @Data
 public class Notice {
 
-	private String notice;
+	private String noticeTaxt;
+	private String noticeNum;
+	
 	
 }

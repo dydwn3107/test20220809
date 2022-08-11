@@ -39,20 +39,19 @@ public class CardService {
 		System.out.println("충전할 금액을 입력하세요>");
 		int money = Integer.parseInt(sc.nextLine());
 		if(money <= 10000) {
-			System.out.println("★이벤트★ 5% 보너스 충전됩니다.");
+			System.out.println("★이벤트★ 5% 보너스 충전됩니다. + " + (money * 0.05) + "원");
 			event1 = (int) (money + money * 0.05);
 			ca.setBalance(event1);
 		}else if(money >= 10000 && money <= 30000) {
-			System.out.println("★이벤트★ 10% 보너스 충전됩니다.");
+			System.out.println("★이벤트★ 10% 보너스 충전됩니다. + " + (money * 0.1) + "원");
 			event1 = (int) (money + money * 0.1);
 			ca.setBalance(event1);
 		}else if(money >= 50000) {
-			System.out.println("★이벤트★ 20% 보너스 충전됩니다.");
+			System.out.println("★이벤트★ 20% 보너스 충전됩니다. + " + (money * 0.2) + "원");
 			event1 = (int) (money + money * 0.2);
 			ca.setBalance(event1);
 		}
 		ca.setCardId(cardId);
-		
 		
 		int result = CardDAO.getInstance().updateMoney(ca);
 		if(result == 1) {
