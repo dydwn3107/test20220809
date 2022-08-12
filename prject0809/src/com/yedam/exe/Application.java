@@ -14,7 +14,8 @@ public class Application {
 	}
 
 	private void start() {
-		while (true) {
+		boolean yes = true;
+		while (yes) {
 			System.out.println("1. 로그인 | 2. 종료");
 			menuNo = Integer.parseInt(sc.nextLine());
 			switch (menuNo) {
@@ -26,7 +27,8 @@ public class Application {
 				}
 				break;
 			case 2:
-
+				System.out.println("프로그램 종료 ♬");
+				yes = false;
 				break;
 			}
 		}

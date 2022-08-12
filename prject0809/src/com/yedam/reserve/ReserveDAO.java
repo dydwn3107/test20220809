@@ -54,21 +54,51 @@ public class ReserveDAO extends DAO{
 	      }
 	      return true;
 	   }
-	
-	
-	
 	public List<Reserve> getReserve(){
 		List<Reserve> list = new ArrayList<>();
 		Reserve reserve = null;
 		try {
 			conn();
-			String sql = "select reserve_room, reserve_time from reserve where carmember_id = ?";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, reserve.getCarmemberId());
-			rs = pstmt.executeQuery();
+			String sql = "select * from reserve order by reserve_date";
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
 			
+			while(rs.next()) {
+				reserve = new Reserve();
+				reserve.setCarmemberId(rs.getString("carmember_id"));
+				reserve.setReserveRoom(rs.getString("reserve_room"));
+				reserve.setReserveDate(rs.getDate("reserve_date"));
+				reserve.setReserveTime(rs.getString("reserve_time"));
+				list.add(reserve);
+			}
 		}catch(Exception e) {
 			e.printStackTrace();
+		}finally {
+			disconnect();
+		}
+		return list;
+	}
+	public List<Reserve> getDetailReserve(String carmemberId){
+		List<Reserve> list = new ArrayList<>();
+		Reserve reserve = null;
+		try {
+			conn();
+			String sql = "select * from reserve where carmember_id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, carmemberId);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				reserve = new Reserve();
+				reserve.setCarmemberId(rs.getString("carmember_id"));
+				reserve.setReserveRoom(rs.getString("reserve_room"));
+				reserve.setReserveDate(rs.getDate("reserve_date"));
+				reserve.setReserveTime(rs.getString("reserve_time"));
+				list.add(reserve);
+			}
+		}catch (Exception e) {
+			disconnect();
 		}finally {
 			disconnect();
 		}

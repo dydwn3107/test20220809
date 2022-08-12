@@ -13,8 +13,8 @@ public class CleanService {
 		for(Clean clean : list) {
 			i++;
 			System.out.println("▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼");
-			System.out.println(i+".세차 메뉴> " + clean.getCleanMenu());
-			System.out.println(i+".세차 가격> " + clean.getCleanPrice());
+			System.out.println("▶  "+i+".세차 메뉴> " + clean.getCleanMenu());
+			System.out.println("▶  "+i+".세차 가격> " + clean.getCleanPrice());
 			System.out.println("▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲");
 		}
 	}

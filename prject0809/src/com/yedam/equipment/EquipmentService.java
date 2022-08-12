@@ -13,8 +13,8 @@ public class EquipmentService {
 		for(Equipment equipment : list) {
 			i++;
 			System.out.println("▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼");
-			System.out.println(i+".장비 메뉴> " + equipment.getEquipmentMenu());
-			System.out.println(i+".장비 가격> " + equipment.getEquipmentPrice());
+			System.out.println("▶  "+i+".장비 메뉴> " + equipment.getEquipmentMenu());
+			System.out.println("▶  "+i+".장비 가격> " + equipment.getEquipmentPrice());
 			System.out.println("▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲");
 		}
 	}

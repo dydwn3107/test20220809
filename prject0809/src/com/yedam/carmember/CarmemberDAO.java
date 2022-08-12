@@ -179,5 +179,27 @@ public class CarmemberDAO extends DAO {
 		return result;
 		
 	}
+	public List<Carmember> getCarmemberId() {
+		List<Carmember> list = new ArrayList<>();
+		Carmember carmember1 = null;
+		try {
+			conn();
+			String sql = "select carmember_id from carmember";
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
 
+			while (rs.next()) {
+				carmember1 = new Carmember();
+				carmember1.setCarmemberId(rs.getString("carmember_id"));
+	
+				list.add(carmember1);
+
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			disconnect();
+		}
+		return list;
+	}
 }

@@ -51,7 +51,7 @@ public class ManageMent {
 				} else if (menuNo == 6) {
 					ns.registNotice();
 				} else if(menuNo == 7) {
-					System.out.println("1. 공지사항 조회 | 2. 공지사항 수정 | 3. 공지사항 삭제");
+					System.out.println("1. 공지사항 조회 ● 2. 공지사항 수정 ▲ 3. 공지사항 삭제 X");
 					int num = Integer.parseInt(sc.nextLine());
 					if(num ==1) {
 						ns.getNotice();
@@ -62,7 +62,9 @@ public class ManageMent {
 					}
 				} else if(menuNo == 8) {
 					fs.getfree();
-				} else if (menuNo == 9) {
+				} else if(menuNo == 9) {
+					rs.getReserve();
+				} else if (menuNo == 10) {
 					cs.logout();
 					return;
 				}
@@ -84,7 +86,13 @@ public class ManageMent {
 				} else if(menuNo == 7) {
 					fs.registFree();
 				} else if(menuNo == 8) {
-					rs.registReserve();
+					System.out.println("1. 예약 등록 ☎ | 2. 예약 조회 ☎");
+					int a = Integer.parseInt(sc.nextLine());
+					if(a == 1) {
+						rs.registReserve();
+					}else if (a == 2) {
+						rs.getDetailReserve();
+					}
 				} else if (menuNo == 9) {
 					cs.logout();
 					return;
@@ -94,11 +102,11 @@ public class ManageMent {
 	}
 	private void menuInfo() {
 		if (CarmemberService.carmemberInfo.getRole().equals("1")) {
-			System.out.println("1. 회원 등록    | 2. 회원 전체 조회         | 3. 회원 별 조회   | 4. 회원 수정 | 5. 회원 삭제 ");
-			System.out.println("6. 공지사항 등록 | 7. 공지사항 조회, 수정, 삭제 | 8. 자유게시판 조회 | 9. 로그아웃 ");
+			System.out.println("1.【 회원 등록 】    2.【 회원 전체 조회 】         3.【 회원 별 조회 】   4.【 회원 수정 】    5.【 회원 삭제 】");
+			System.out.println("6.【 공지사항 등록 】 7.【 공지사항 조회, 수정, 삭제 】 8.【 자유게시판 조회 】 9.【 예약 정보 조회 】 10.【 로그아웃 】");
 		} else if (CarmemberService.carmemberInfo.getRole().equals("0")) {
-			System.out.println("1. 카드 등록 | 2. 카드 충전 | 3. 카드 정보 조회 | 4. 세차 메뉴 선택 | 5. 세차 장비 구입 ");
-			System.out.println("6. 공지사항 조회 | 7. 자유게시판 등록 | 8. 세차장 예약 | 9. 로그아웃 ");
+			System.out.println("1.【 카드 등록 】    2.【 카드 충전 】     3.【 카드 정보 조회 】   4.【 세차 메뉴 선택 】 5.【 세차 장비 구입 】");
+			System.out.println("6.【 공지사항 조회 】 7.【 자유게시판 등록 】 8.【 세차장 예약, 조회 】 9.【 로그아웃 】");
 		}
 		System.out.println("입력>");
 		menuNo = Integer.parseInt(sc.nextLine());

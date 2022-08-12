@@ -67,13 +67,13 @@ public class CarmemberService {
 		List<Carmember> list = CarmemberDAO.getInstance().getDetailCarmember();
 		for(Carmember carmember : list) {
 			System.out.println("▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦");
-			System.out.println("고객 ID> " + carmember.getCarmemberId());
-			System.out.println("고객 PW> " + carmember.getCarmemberPw());
-			System.out.println("고객 이름> " + carmember.getCarmemberName());
-			System.out.println("고객 차량번호> " + carmember.getCarmemberCarnum());
-			System.out.println("고객 차량종류> " + carmember.getCarmemberCarname());
-			System.out.println("고객 이메일> " + carmember.getCarmemberEmail());
-			System.out.println("고객 주소> " + carmember.getCarmemberAddress());
+			System.out.println("▦   고객 ID> " + carmember.getCarmemberId());
+			System.out.println("▦   고객 PW> " + carmember.getCarmemberPw());
+			System.out.println("▦   고객 이름> " + carmember.getCarmemberName());
+			System.out.println("▦   고객 차량번호> " + carmember.getCarmemberCarnum());
+			System.out.println("▦   고객 차량종류> " + carmember.getCarmemberCarname());
+			System.out.println("▦   고객 이메일> " + carmember.getCarmemberEmail());
+			System.out.println("▦   고객 주소> " + carmember.getCarmemberAddress());
 			System.out.println("▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦");
 		}
 	}
@@ -84,13 +84,13 @@ public class CarmemberService {
 		
 		for(Carmember carmember : list) {
 			System.out.println("▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦");
-			System.out.println("고객 ID> " + carmember.getCarmemberId());
-			System.out.println("고객 PW> " + carmember.getCarmemberPw());
-			System.out.println("고객 이름> " + carmember.getCarmemberName());
-			System.out.println("고객 차량번호> " + carmember.getCarmemberCarnum());
-			System.out.println("고객 차량종류> " + carmember.getCarmemberCarname());
-			System.out.println("고객 이메일> " + carmember.getCarmemberEmail());
-			System.out.println("고객 주소> " + carmember.getCarmemberAddress());
+			System.out.println("▦   고객 ID> " + carmember.getCarmemberId());
+			System.out.println("▦   고객 PW> " + carmember.getCarmemberPw());
+			System.out.println("▦   고객 이름> " + carmember.getCarmemberName());
+			System.out.println("▦   고객 차량번호> " + carmember.getCarmemberCarnum());
+			System.out.println("▦   고객 차량종류> " + carmember.getCarmemberCarname());
+			System.out.println("▦   고객 이메일> " + carmember.getCarmemberEmail());
+			System.out.println("▦   고객 주소> " + carmember.getCarmemberAddress());
 			System.out.println("▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦▦");
 		}
 	}
